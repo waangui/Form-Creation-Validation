@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', ()=> {
+document.addEventListener('DOMContentLoaded', function () {
   
     const form = document.getElementById(id="registration-form");
     const feedbackDiv = document.getElementById(id="form-feedback");
@@ -9,10 +9,15 @@ document.addEventListener('DOMContentLoaded', ()=> {
         event.preventDefault();
     })
 
-    // Retrieve Input 
+    // Retrieve Input Elements
 
-    const userName = document.getElementById(id="username");
+    const usernameInput = document.getElementById(id="username");
     const emailInput = document.getElementById(id="email");
-    const passwordInpute = document.getElementById(id="password");
+    const passwordInput = document.getElementById(id="password");
 
+    // Retrieve trimmed values
+
+    const userName = usernameInput.value.trim();
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
 })
