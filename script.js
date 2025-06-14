@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Retrieve trimmed values
 
-    const userName = usernameInput.value.trim();
+    const username = usernameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Username Validation
 
-    if (userName.length < 3){
+    if (username.length < 3){
         isValid=false;
         messages.push('Username must be at least 3 characters long!');
     }
