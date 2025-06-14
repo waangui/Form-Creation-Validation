@@ -20,4 +20,43 @@ document.addEventListener('DOMContentLoaded', function () {
     const userName = usernameInput.value.trim();
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
+
+    // Validation
+
+   let isValid = true;
+    const messages = [];
+
+    // Username Validation
+
+    if (userName.length < 3){
+        isValid=false;
+        messages.push('Username must be at least 3 characters long!');
+    }
+
+    // Email Validation
+
+    if (!email.includes ('@') || !email.includes ('.')){
+        isValid=false;
+        messages.push('Email must include "@" and "."!');
+    }
+    // Password Validation
+
+    if (password.length < 8){
+        isValid=false;
+        messages.push('Password must be at least 8 characters long!');
+    }
+
+    // Feedback Display
+
+    feedbackDiv.style.display = 'block';
+
+    if (isValid){
+        feedbackDiv.textContent = 'Registration successful!';
+        feedbackDiv.style.color = "#28a745";
+    } else {
+        feedbackDiv.innerHTML = messages.join('<br>');
+        feedbackDiv.style.color = "#dc3545";
+    }
+
+    
 })
